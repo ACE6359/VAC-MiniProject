@@ -1,0 +1,28 @@
+# Web Framework
+Flask
+Werkzeug
+
+# Text-to-Speech
+gTTS
+
+# Speech Recognition Core (no PyAudio here)
+SpeechRecognition
+
+# Math & Parsing
+sympy
+numpy
+
+# Environment Variables
+python-dotenv
+
+# HTTP Requests
+requests
+
+# Audio Processing
+pydub
+simpleaudio
+
+# Development Tools
+pytest
+flake8
+black

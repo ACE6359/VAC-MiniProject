@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voice Calculator</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icons/icon-192.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <div class="header">
+      <h1>Voice Calculator</h1>
+      <div class="theme-toggle-wrapper">
+        <span class="theme-icon">🌞</span>
+        <label class="switch">
+          <input type="checkbox" id="themeToggle">
+          <span class="slider"></span>
+        </label>
+        <span class="theme-icon">🌙</span>
+      </div>
+      
+    </div>
+
+    <div class="calculator">
+      <!-- Inside the .display div -->
+<div class="display">
+  <input type="text" id="input" placeholder="0" disabled />
+  <button class="mic-btn" id="micBtn">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+      class="bi bi-mic" viewBox="0 0 16 16">
+      <path
+        d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5" />
+      <path
+        d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3" />
+    </svg>
+  </button>
+</div>
+
+
+      <div class="button-grid">
+        <button>7</button><button>8</button><button>9</button><button>/</button>
+        <button>4</button><button>5</button><button>6</button><button>*</button>
+        <button>1</button><button>2</button><button>3</button><button>-</button>
+        <button>0</button><button>.</button><button>=</button><button>+</button>
+        <button id="clear">C</button><button id="delete">DEL</button>
+      </div>
+    </div>
+
+    <button id="toggleHistoryBtn" class="history-toggle">Show History ↓</button>
+    <div class="history-panel" id="historyPanel">
+      <ul id="historyList"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const micBtn = document.getElementById('micBtn');
+      if (micBtn) {
+        micBtn.addEventListener('click', function() {
+          console.log('Mic clicked');
+          this.classList.toggle('recording');
+        });
+      } else {
+        console.error('Mic button not found');
+      }
+    });
+  </script>
+  <script>
+    // Simple test to ensure the mic button can be accessed and the class can be toggled
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('DOM loaded - testing mic button');
+      const micBtn = document.getElementById('micBtn');
+      
+      if (micBtn) {
+        console.log('Mic button found');
+        
+        // Toggle the recording class on click
+        micBtn.addEventListener('click', function() {
+          console.log('Mic button clicked');
+          this.classList.toggle('recording');
+          console.log('Recording class toggled:', this.classList.contains('recording'));
+        });
+      } else {
+        console.error('Mic button not found - check your HTML');
+      }
+    });
+  </script>
+</body>
+</html>
